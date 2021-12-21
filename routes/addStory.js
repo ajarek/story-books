@@ -23,7 +23,6 @@ router.post('/addStory', async (req,res )=>{
        })
        if(newStory){
        const story=await newStory.save()
-       console.log(story.name)
        }
        res.redirect('/storyUser/?data='+Name)
       
