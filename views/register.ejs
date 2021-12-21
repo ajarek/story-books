@@ -1,0 +1,41 @@
+<%-include('./partials/header')%>
+<div class="container d-flex justify-content-center " style="width: 100%;min-height:100vh;">
+    <div class="row  my-5">
+        <div class="col-12 d-flex justify-content-center align-items-center ">
+            <img src="img/logo.png" alt="logo" width="20%">
+            <div class="text-left ">Sign in with Google</div>
+        </div>
+        <hr>
+        <div class="col-12 text-center">
+            <h2>Create your account</h2>
+        </div>
+        <div class="col-6 text-center"><a class="btn " href="/login">SIGN IN</a></div>
+        <div class="col-6 text-center"><a class="btn active" href="/register">SIGN UP</a></div>
+
+        <form action="/register" method="post">
+            <div class="mb-3">
+                <input type="text" class="form-control" name="username" placeholder="Username" required>
+            </div>
+            <div class="mb-3">
+
+                <input type="email" class="form-control" name="email" placeholder="Email" required>
+            </div>
+            <div class="mb-3">
+
+                <input type="password" class="form-control" name="password" placeholder="Password" required>
+            </div>
+            <div class="mb-3">
+                <input type="password" class="form-control" name="repeat" placeholder="Repeat Password" required>
+            </div>
+            <% if (typeof errorMessage !== "undefined") { %>
+                <p class="bg-danger text-light p-1 rounded"><%= errorMessage %></p>
+                <% } %>
+            <div class="mb-3 ">
+                <button type="submit" class="btn google  shadow">SIGN UP </button>
+            </div>
+
+        </form>
+        
+    </div>
+</div>
+<%-include('./partials/footer')%>

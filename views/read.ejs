@@ -1,0 +1,10 @@
+<%-include('./partials/header')%>
+<div class="container d-flex flex-column justify-content-start mt-5  read" style="width: 100%;min-height:100vh;"> 
+    <div class="beck d-flex justify-content-end "><a class="btn btn-outline-dark" href="/"><i class="fas fa-arrow-left fs-2 "></i></a></div>
+    <p>author: <%=story.name%></p><p>published: <%=story.updatedAt.toLocaleDateString()%></p>
+    <h3 class="mb-4"><%=story.title%></h3> 
+   <h5><%-story.text%></h5>
+   
+</div>
+<%-include('./partials/footer')%>
+

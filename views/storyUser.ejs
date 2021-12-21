@@ -1,0 +1,31 @@
+<%-include('./partials/header')%>
+<%-include('./partials/navbar')%>
+
+<div class="container d-flex flex-column justify-content-start " style="width: 100%;min-height:100vh;">
+    <h1>Welcome <%=data1%></h1>
+    <p>Here are your stories</p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Date</th>
+                <th scope="col">Status</th>
+                <th scope="col">Action</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <% mystories.forEach(ms=>{%>
+            <tr>
+                <td><%=ms.title%></td>
+                <td><%=ms.updatedAt.toLocaleDateString()%></td>
+                <td><%=ms.status%></td>
+                <td><a class="btn btn-success me-3" href="/edit/<%=ms._id%>"><i class="far fa-edit"></i></a><a class="btn btn-danger" href="/delete/<%=ms._id%>"><i class="fas fa-trash"></i></a></td>
+                
+            </tr>
+            <%})%>
+        </tbody>
+    </table>
+    <a class="btn add" href="/addStory/?data=<%=data%>"><i class="fas fa-plus"></i></a>
+</div>
+<%-include('./partials/footer')%>

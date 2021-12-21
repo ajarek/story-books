@@ -1,0 +1,37 @@
+<%-include('./partials/header')%>
+<script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>
+<div class="container d-flex flex-column justify-content-start " style="width: 100%;min-height:100vh;">
+    <h1>Update a story <%=Story.name%></h1>
+    <p>Write your story here</p>
+    <form action="/edit/<%=Story._id%>" method="post">
+        <input type="hidden" name="name" value="<%=Story.name%>">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" name="title" value="<%=Story.title%>">
+        </div>
+        <div class="mb-3">
+            <select class="form-select" name="status" id="status">
+                <option>
+                    Public
+                </option>
+                <option>
+                    Private
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="text" class="form-label">Tell Us Your Story:</label>
+            <textarea class="form-control" id="text" name="text" rows="30"><%=Story.text%></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Update</button>
+    </form>
+</div>
+<script>
+    ClassicEditor
+        .create(document.querySelector('#text'))
+        .catch(error => {
+            console.error(error);
+        });
+</script>
+
+<%-include('./partials/footer')%>
