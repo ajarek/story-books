@@ -28,6 +28,7 @@ app.use(cookieParser())
  app.use(require('./routes/read')) 
  app.use(require('./routes/edit')) 
  app.use(require('./routes/delete')) 
+ app.use(require('./routes/forgot-password')) 
  
 
 

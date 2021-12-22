@@ -24,11 +24,14 @@
             <% if (typeof errorMessage !== "undefined") { %>
                 <p class="bg-danger text-light p-1 rounded"><%= errorMessage %></p>
                 <% } %>
+                <% if (typeof Message !== "undefined") { %>
+                    <p class="bg-success text-light p-1 rounded"><%= Message %></p>
+                    <% } %>
             <div class="mb-3 ">
                 <button type="submit" class="btn google  shadow">SIGN IN </button>
             </div>
         </form>
-        <a class="btn text-secondary" href="#">Forgot Password?</a>
+        <a class="btn text-secondary" href="/forgot-password">Forgot Password?</a>
     </div>
 </div>
 <%-include('./partials/footer')%>
